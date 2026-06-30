@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Прикол!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Звуковой файл должен лежать в папке проекта -->
+    <audio id="prankSound" loop>
+        <source src="sound.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="background-container">
+        <!-- Кнопка, которая запускает звук и перенаправляет -->
+        <button id="mainButton" class="nfc-button">
+            <img src="button-icon.png" alt="Нажми меня">
+        </button>
+    </div>
+
+    <script>
+        const btn = document.getElementById('mainButton');
+        const sound = document.getElementById('prankSound');
+
+        btn.addEventListener('click', () => {
+            sound.play(); // Запускаем звук
+            // Можно добавить задержку перед редиректом, чтобы звук успел начаться
+            setTimeout(() => {
+                window.location.href = "https://youtube.com/watch?v=dQw4w9WgXcQ"; // Ссылка для пранка
+            }, 1000); 
+        });
+    </script>
+</body>
+</html>
